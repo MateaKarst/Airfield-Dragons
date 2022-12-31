@@ -9,6 +9,7 @@ let bullets = [];
 let enemies = [];
 let score = 0;
 let button;
+let startButton;
 
 // Interval for shooting bullets
 let bulletInterval = 1; // (10 seconds at 60 fps)
@@ -18,35 +19,11 @@ function setup() {
   createCanvas(400, 600);
   bg = new castle();
 
-  // Spawn enemies
-  for (let i = 0; i < 10; i++) {
-    let enemy = {
-      x: random(45, width - 205), // random x position
-      y: random(-800, 0), // random y position
-      img: enemyImg,
-    };
-    enemies.push(enemy);
-  }
-}
-
-// Reset game when player loses
-function reset() {
-  // Clear enemies and bullets, reset score
-  enemies = [];
-  bullets = [];
-  score = 0;
-  redraw(); // redraw canvas
-  button.remove(); // remove reset button
-  loop(); // start game loop again
-  // Respawn enemies
-  for (let i = 0; i < 10; i++) {
-    let enemy = {
-      x: random(45, width - 205), // random x position
-      y: random(-800, 0), // random y position
-      img: enemyImg,
-    };
-    enemies.push(enemy);
-  }
+  textSize(30);
+  text("Welcome", width / 2, height / 2);
+  startButton = createButton("Start Game");
+  startButton.position(width / 2 - 30, height / 2 - 120);
+  startButton.mousePressed(startGame);
 }
 
 function draw() {
@@ -76,25 +53,25 @@ function draw() {
     }
   }
 
- // Collisions between bullets and enemies
- for (let enemy of enemies) {
-  for (let bullet of bullets) {
-    // If distance between enemy and bullet is something
-    if (dist(enemy.x, enemy.y, bullet.x, bullet.y) < 26) {
-      // remove enemy and bullet from lists,
-      enemies.splice(enemies.indexOf(enemy), 1);
-      bullets.splice(bullets.indexOf(bullet), 1);
-      // spawn new enemy, and add to score
-      let newEnemy = {
-        x: random(45, width - 205), // random x position
-        y: random(-800, 0), // random y position
-        img: enemyImg,
-      };
-      enemies.push(newEnemy);
-      score += 1;
+  // Collisions between bullets and enemies
+  for (let enemy of enemies) {
+    for (let bullet of bullets) {
+      // If distance between enemy and bullet is something
+      if (dist(enemy.x, enemy.y, bullet.x, bullet.y) < 26) {
+        // remove enemy and bullet from lists,
+        enemies.splice(enemies.indexOf(enemy), 1);
+        bullets.splice(bullets.indexOf(bullet), 1);
+        // spawn new enemy, and add to score
+        let newEnemy = {
+          x: random(45, width - 205), // random x position
+          y: random(-800, 0), // random y position
+          img: enemyImg,
+        };
+        enemies.push(newEnemy);
+        score += 1;
+      }
     }
   }
-}
 
   // Display score
   textSize(25);

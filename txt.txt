@@ -1,0 +1,3 @@
+fill(lerpColor(darkRed, this.lightRed, 0.2)); // gradient effect on left 
+fill(lerpColor(darkRed, this.lightRed, 0.8)); // gradient effect on right 
+fill(darkRed); // firebrick
