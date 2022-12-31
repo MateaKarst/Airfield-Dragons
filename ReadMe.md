@@ -13,6 +13,7 @@ app:
 - castle --> background of the game
 - game --> main game mechanics
 - reset --> resets the game once you lost
+- startgame --> allows you to restart the game with a button
 
 assets:
 
