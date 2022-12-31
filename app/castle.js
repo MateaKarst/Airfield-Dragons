@@ -1,4 +1,4 @@
-class ImgBg {
+class castle {
   constructor() {
     this.canvas = createCanvas(400, 600);
   }
@@ -8,19 +8,18 @@ class ImgBg {
 
     
   // draw the walls
-
   fill(208, 198, 176); // medium stone color
-  rect(0, 480, 400, 120);
+  rect(0, 480, 400, 120); // mid wall
   fill(236, 229, 221); // light stone color
-  rect(0, 480, 400, 5);
+  rect(0, 480, 400, 5); // top wall
   fill(150, 133, 123); // dark stone color
-  rect(0, 580, 400, 20);
+  rect(0, 580, 400, 20); // bottom wall
 
-  // draw the tower base
+  // draw the house
   fill(128, 93, 65); // wood color
   rect(150, 520, 100, 80);
 
-  // draw the tower tops
+  // draw the house tops
   fill(75, 55, 45) // dark roof color
   rect(160, 505, 80, 15);
   fill(75, 65, 55) // medium roof color
@@ -37,30 +36,30 @@ class ImgBg {
 
   // draw the left tower
   fill(150, 133, 123) // dark stone color
-  rect(0, 500, 55, 100);
+  rect(0, 500, 55, 100); // short wall
   fill(128, 93, 65) // wood color
-  rect(0, 450, 45, 150);
+  rect(0, 450, 45, 150); // taller wall
   fill(75, 65, 55) // medium roof color
-  rect(0, 430, 40, 200);
+  rect(0, 430, 40, 200); // main tower
   fill(236, 229, 221) // light stone color
-  triangle(0, 430, 19, 380, 40, 430);
+  triangle(0, 430, 19, 380, 40, 430); // main tower roof
 
   // draw the right tower
   fill(150, 133, 123) // dark stone color
-  rect(345, 500, 55, 100);
+  rect(345, 500, 55, 100); // short wall
   fill(128, 93, 65) // wood color
-  rect(355, 450, 45, 150);
+  rect(355, 450, 45, 150); // taller wall
   fill(75, 65, 55) // medium roof color
-  rect(360, 430, 40, 200);
+  rect(360, 430, 40, 200); // main tower
   fill(236, 229, 221) // light stone color
-  triangle(360, 430, 378.5, 380, 400, 430);
+  triangle(360, 430, 378.5, 380, 400, 430); // main tower roof
 
   // cannon
   let cannonX = constrain(mouseX, 57, width - 57);  // constrain the cannon's x position to the canvas bounds
   fill(75, 65, 55) // medium roof color
-  rect(cannonX - 8, 435, 15, 5);
-  rect(cannonX - 5.5, 440, 10, 25);
+  rect(cannonX - 8, 435, 15, 5); // cannon mouth
+  rect(cannonX - 5.5, 440, 10, 25); // cannon tube
   fill(128, 93, 65) // wood color
-  ellipse(cannonX , 472.5, 22.5, 20);
+  ellipse(cannonX , 472.5, 22.5, 20); // cannon rotator
   }
 }
