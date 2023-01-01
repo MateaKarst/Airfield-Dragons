@@ -1,7 +1,7 @@
 // Preload enemy image
 let enemyImg;
 function preload() {
-  enemyImg = loadImage("../assets/images/dragon.gif");
+  enemyImg = loadImage("./assets/images/dragon.gif");
 }
 
 // Variables
