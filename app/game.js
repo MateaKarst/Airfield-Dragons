@@ -19,9 +19,12 @@ let frameCount = 0; // frame number
 
 function setup() {
   createCanvas(400, 600);
+
+  // Background
   bgColor = new Color(canvas);
   bgCastle = new Castle();
 
+  // Start game
   textSize(30);
   text("Welcome", width / 2, height / 2);
   startButton = createButton("Start Game");
@@ -35,6 +38,7 @@ function setup() {
 }
 
 function draw() {
+  // Draw and display background
   bgColor.display(); // background color
   bgCastle.draw(); // background image
 
@@ -51,7 +55,7 @@ function draw() {
   for (let enemy of enemies) {
     enemy.y += 2; // move enemy downwards
     image(enemy.img, enemy.x, enemy.y); // draw enemy
-    // If enemy reaches bottom of canvas, stop game loop and show "You Lost" message
+    // if enemy reaches bottom of canvas, stop game loop and show "You Lost" message
     if (enemy.y > 448) {
       textSize(20);
       text("You Lost", width / 2 - 40, height / 2 - 40);
@@ -61,7 +65,7 @@ function draw() {
       button.style("border", "none");
       button.style("padding", "2px 5px");
       button.style("border-radius", "5px");
-      button.position(width / 2 - 15, height / 2 -25); // position reset button
+      button.position(width / 2 - 15, height / 2 - 25); // position reset button
       button.mousePressed(reset); // reset game when pressed button
       noLoop();
     }
@@ -70,7 +74,7 @@ function draw() {
   // Collisions between bullets and enemies
   for (let enemy of enemies) {
     for (let bullet of bullets) {
-      // If distance between enemy and bullet is something
+      // if distance between enemy and bullet is something
       if (dist(enemy.x, enemy.y, bullet.x, bullet.y) < 26) {
         // remove enemy and bullet from lists,
         enemies.splice(enemies.indexOf(enemy), 1);

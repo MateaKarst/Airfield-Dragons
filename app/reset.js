@@ -1,19 +1,28 @@
-// Reset game when player loses
+// reset game when player loses
 function reset() {
-  // Clear enemies and bullets, reset score
+  // clear enemies and bullets then reset the score
   enemies = [];
   bullets = [];
   score = 0;
-  redraw(); // redraw canvas
-  button.remove(); // remove reset button
-  loop(); // start game loop again
-  // Respawn enemies
+
+  // redraw the canvas
+  redraw();
+
+  // remove reset button
+  button.remove();
+
+  // start the game loop again
+  loop();
+
+  // respawn enemies
   for (let i = 0; i < 10; i++) {
+    // create a new enemy
     let enemy = {
       x: random(45, width - 205), // random x position
       y: random(-800, 0), // random y position
-      img: enemyImg,
+      img: enemyImg, // enemy image
     };
+    // add the enemy to the enemies array
     enemies.push(enemy);
   }
 }
