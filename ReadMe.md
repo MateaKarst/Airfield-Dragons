@@ -10,7 +10,8 @@ How to play:
 app:
 
 - attacking --> shooting the bullets when mouse is clicked
-- castle --> background of the game
+- bgcastle --> background image of the game
+- bgcolor --> background color/sky of the game
 - game --> main game mechanics
 - reset --> resets the game once you lost
 - startgame --> allows you to restart the game with a button
