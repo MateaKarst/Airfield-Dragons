@@ -10,6 +10,8 @@ let enemies = [];
 let score = 0;
 let button;
 let startButton;
+let bgColor;
+let bgCastle;
 
 // Interval for shooting bullets
 let bulletInterval = 1; // (10 seconds at 60 fps)
@@ -17,17 +19,24 @@ let frameCount = 0; // frame number
 
 function setup() {
   createCanvas(400, 600);
-  bg = new castle();
+  bgColor = new Color(canvas);
+  bgCastle = new Castle();
 
   textSize(30);
   text("Welcome", width / 2, height / 2);
   startButton = createButton("Start Game");
-  startButton.position(width / 2 - 30, height / 2 - 120);
+  startButton.style("background-color", "#0000FF");
+  startButton.style("color", "#fff");
+  startButton.style("border", "none");
+  startButton.style("padding", "5px 10px");
+  startButton.style("border-radius", "8px");
+  startButton.position(width / 2 - 45, height / 2 - 110);
   startButton.mousePressed(startGame);
 }
 
 function draw() {
-  bg.draw(); // background image
+  bgColor.display(); // background color
+  bgCastle.draw(); // background image
 
   // Draw bullets
   for (let bullet of bullets) {
@@ -45,9 +54,14 @@ function draw() {
     // If enemy reaches bottom of canvas, stop game loop and show "You Lost" message
     if (enemy.y > 448) {
       textSize(20);
-      text("You Lost", width / 2 - 40, height / 2 - 20);
+      text("You Lost", width / 2 - 40, height / 2 - 40);
       button = createButton("reset"); // create reset button
-      button.position(width / 2 - 15, height / 2); // position reset button
+      button.style("background-color", "#0000FF");
+      button.style("color", "#fff");
+      button.style("border", "none");
+      button.style("padding", "2px 5px");
+      button.style("border-radius", "5px");
+      button.position(width / 2 - 15, height / 2 -25); // position reset button
       button.mousePressed(reset); // reset game when pressed button
       noLoop();
     }

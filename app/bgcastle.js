@@ -1,15 +1,13 @@
-class castle {
-  constructor() {
-    this.canvas = createCanvas(400, 600);
+class Castle {
+  constructor(canvas) {
+    this.canvas = canvas;
     this.towerBrickWidth = 13;
     this.towerBrickHeight = 3;
     this.towerBrickPadding = 0.1;
   }
-
+ 
   draw() {
-    background(240);
-
-    // Walls //
+       // Walls //
     fill(0, 0, 0);
     fill(60, 0, 0);
     rect(0, 480, 400, 120); // mid wall
