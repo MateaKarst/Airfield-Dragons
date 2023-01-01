@@ -55,7 +55,7 @@ function draw() {
     if (enemy.y > 448) {
       textSize(20);
       text("You Lost", width / 2 - 40, height / 2 - 40);
-      button = createButton("reset"); // create reset button
+      button = createButton("restart"); // create reset button
       button.style("background-color", "#0000FF");
       button.style("color", "#fff");
       button.style("border", "none");
