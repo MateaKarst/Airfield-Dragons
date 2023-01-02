@@ -18,5 +18,5 @@ app:
 
 assets:
 
-- images -- dragon.gif --> enemy ~ dragon
+- images -- dragon.gif --> enemy ~ dragon (obtained from https://deepdivegamestudio.itch.io/dragon-asset-pack)
 - scripts -- p5.js --> script to make the game work
